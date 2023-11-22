@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Responsivo</title>
+    <link rel="stylesheet" href="global.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <style>
+        .carousel img {
+            max-height: 100%; 
+            object-fit: cover;
+        }
+
+        #navl {
+            display: flex;
+            align-items: center;
+        }
+
+        #logo {
+            margin-right: auto;
+        }
+
+        .navbar-option {
+            margin-left: 20px;
+        }
+
+        .options-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 150px; 
+            margin-top: 20px; 
+        }
+
+        .option {
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="blue lighten-4">
+    <div class="nav-wrapper">
+        <a href="index.html" class="brand-logo navbar-logo"><img src="assets/UniKids 02.png" alt="" class="responsive-img" id="logo"></a>
+        <ul class="right hide-on-med-and-down" id="navl">
+            <li class="navbar-option"><a href="contato.html"><img src="assets/matricula.png" alt="" class="responsive-img"></a></li>
+            <li class="navbar-option"><a href="#"><img src="assets/Group 1.png" alt="" class="responsive-img"></a></li>
+            <li class="navbar-option"><a href="#"><img src="assets/PEDAGOGICO2.png" alt="" class="responsive-img"></a></li>
+            <li class="navbar-option"><a href="noticias.html"><img src="assets/noticias.png" alt="" class="responsive-img"></a></li>
+        </ul>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons"><img src="assets/icons8-menu-50.png" alt="" style="margin-top: 6px;"></i></a>
+    </div>
+</nav>
+
+<!-- Mobile Navbar -->
+<ul class="sidenav" id="mobile-demo">
+  <li><a href="index.html">Página inicial</a></li>
+  <li><a href="contato.html">Matrícula</a></li>
+  <li><a href="#">Colégio</a></li>
+  <li><a href="#">Pedagógico</a></li>
+  <li><a href="noticias.html">Notícias</a></li>
+
+</ul>
+<div class="container">
+    <h2>Formulário de Visita</h2>
+    <form class="col s12">
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="nome" type="text" class="validate">
+          <label for="nome">Nome</label>
+        </div>
+        <div class="input-field col s6">
+          <input id="email" type="email" class="validate">
+          <label for="email">Email</label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s6">
+          <input id="telefone" type="tel" class="validate">
+          <label for="telefone">Telefone</label>
+        </div>
+        <div class="input-field col s12">
+          <select>
+            <option value="" disabled selected>Assunto</option>
+            <option value="1">Matrícula</option>
+            <option value="2">Visita</option>
+            <option value="3">Dúvida</option>
+          </select>
+          <label>Materialize Select</label>
+        </div>
+        <div class="row">
+          <form class="col s12">
+            <div class="row">
+              <div class="input-field col s12">
+                <textarea id="textarea1" class="materialize-textarea"></textarea>
+                <label for="textarea1">Fale conosco!</label>
+              </div>
+            </div>
+          </form>
+        </div>
+     
+      
+      
+      
+      <button class="btn waves-effect waves-light blue lighten-4 black-text" type="submit" name="action">Enviar
+        <i class="material-icons right"><img src="assets/send.png" alt="" style="height: 1em;"></i>
+      </button>
+    </form>
+  </div>
+
+
+  
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var carouselElems = document.querySelectorAll('.carousel');
+        var carouselInstances = M.Carousel.init(carouselElems, {
+            fullWidth: true,
+            indicators: true
+        });
+
+        var sidenavElems = document.querySelectorAll('.sidenav');
+        var sidenavInstances = M.Sidenav.init(sidenavElems);
+        $(document).ready(function(){
+    $('select').formSelect();
+  });
+    });
+</script>
+</body>
+</html>
